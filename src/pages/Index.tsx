@@ -1,27 +1,31 @@
 import { WhatsAppGroupCard } from "@/components/WhatsAppGroupCard";
 import { Button } from "@/components/ui/button";
-import { Mountain, Users, Calendar, BikeIcon, } from "lucide-react";
+import { Mountain, Users, Calendar, BikeIcon } from "lucide-react";
 import heroImage from "@/assets/hero-outdoor-sports.jpg";
+import { useRef } from "react";
 
 const Index = () => {
   const whatsappGroups = [
     {
       title: "Trekking",
-      description: "Únete a nuestras aventuras de montaña y descubre nuevos senderos cada fin de semana.",
+      description:
+        "Únete a nuestras aventuras de montaña y descubre nuevos senderos cada fin de semana.",
       whatsappUrl: "https://chat.whatsapp.com/GZhnVf62eIPDFZ6LrHKyiX",
-      icon: <Mountain size={32} />
+      icon: <Mountain size={32} />,
     },
     {
       title: "Ciclismo",
-      description: "Rutas en bicicleta para todos los niveles. Explora la naturaleza sobre ruedas.",
+      description:
+        "Rutas en bicicleta para todos los niveles. Explora la naturaleza sobre ruedas.",
       whatsappUrl: "https://chat.whatsapp.com/DzVr520HDvH7qvj6QWahcC",
-      icon: <BikeIcon size={32} />
+      icon: <BikeIcon size={32} />,
     },
     {
       title: "Running",
-      description: "Grupos de running donde compartimos rutas y motivación para correr juntos.",
+      description:
+        "Grupos de running donde compartimos rutas y motivación para correr juntos.",
       whatsappUrl: "https://chat.whatsapp.com/LcgPgEEDXjLCcTf829OJPX",
-      icon: <Users size={32} />
+      icon: <Users size={32} />,
     },
     // {
     //   title: "Salidas Especiales",
@@ -30,28 +34,37 @@ const Index = () => {
     //   icon: <Calendar size={32} />
     // }
   ];
+  const gruposRef = useRef(null);
+
+  const scrollToGrupos = () => {
+    if (gruposRef.current) {
+      gruposRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background ">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent">
             TRIVO
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Conecta con grupos deportivos outdoors y vive aventuras increíbles en la naturaleza
+            Conecta con grupos deportivos outdoors y vive aventuras increíbles
+            en la naturaleza
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full"
+            onClick={scrollToGrupos}
           >
             Explorar Grupos
           </Button>
@@ -59,7 +72,7 @@ const Index = () => {
       </section>
 
       {/* Groups Section */}
-      <section className="py-16 px-4  bg-[#FEFBF9]">
+      <section className="py-16 px-4  bg-[#FEFBF9]" ref={gruposRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -69,7 +82,7 @@ const Index = () => {
               Encuentra tu grupo ideal y conecta con personas
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatsappGroups.map((group, index) => (
               <WhatsAppGroupCard
