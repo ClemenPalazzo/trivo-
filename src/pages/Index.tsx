@@ -8,27 +8,27 @@ const Index = () => {
     {
       title: "Trekking",
       description: "Únete a nuestras aventuras de montaña y descubre nuevos senderos cada fin de semana.",
-      whatsappUrl: "https://wa.me/your-number-here",
+      whatsappUrl: "https://chat.whatsapp.com/GZhnVf62eIPDFZ6LrHKyiX",
       icon: <Mountain size={32} />
     },
     {
       title: "Ciclismo",
       description: "Rutas en bicicleta para todos los niveles. Explora la naturaleza sobre ruedas.",
-      whatsappUrl: "https://wa.me/your-number-here",
+      whatsappUrl: "https://chat.whatsapp.com/DzVr520HDvH7qvj6QWahcC",
       icon: <BikeIcon size={32} />
     },
     {
       title: "Running",
       description: "Grupos de running donde compartimos rutas y motivación para correr juntos.",
-      whatsappUrl: "https://wa.me/your-number-here",
+      whatsappUrl: "https://chat.whatsapp.com/LcgPgEEDXjLCcTf829OJPX",
       icon: <Users size={32} />
     },
-    {
-      title: "Salidas Especiales",
-      description: "Actividades con salidas informales, y sociales",
-      whatsappUrl: "https://wa.me/your-number-here",
-      icon: <Calendar size={32} />
-    }
+    // {
+    //   title: "Salidas Especiales",
+    //   description: "Actividades con salidas informales, y sociales",
+    //   whatsappUrl: "https://wa.me/your-number-here",
+    //   icon: <Calendar size={32} />
+    // }
   ];
 
   return (
